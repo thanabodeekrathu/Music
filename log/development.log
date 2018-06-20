@@ -1,0 +1,1245 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateSongs (20180620052338)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "band" varchar, "album" varchar, "genre" varchar, "chord" varchar)[0m
+  ↳ db/migrate/20180620052338_create_songs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180620052338"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-20 05:26:10.303561"], ["updated_at", "2018-06-20 05:26:10.303561"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Name"], ["band", "Pete Townshend"], ["album", "Dookie"], ["genre", "Jazz"], ["chord", "Ddom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MASC"], ["band", "Blondie"], ["album", " Present and Future"], ["genre", "Reggae"], ["chord", "Fbdim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "HONEYST"], ["band", "Pete Townshend"], ["album", "Their Greatest Hits (1971–1975)"], ["genre", "Rock"], ["chord", "C#dom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Skarf"], ["band", "Catherine Wheel"], ["album", "Recovery"], ["genre", "Jazz"], ["chord", "G#maj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "K.A.R.D"], ["band", "Brian Wilson"], ["album", "Abbey Road"], ["genre", "Rap"], ["chord", "Dm"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "N-Sonic"], ["band", "The Jam"], ["album", "The Bodyguard"], ["genre", "Jazz"], ["chord", "Am7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MXM"], ["band", "Frank Sinatra"], ["album", "Born in the U.S.A."], ["genre", "Reggae"], ["chord", "Fm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "N-Sonic"], ["band", "Rory Gallagher"], ["album", " Book I"], ["genre", "Jazz"], ["chord", "E#6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Longguo & Shihyun"], ["band", "Al Foster"], ["album", "Legend: The Best of Bob Marley & The Wailers"], ["genre", "Rap"], ["chord", "Fdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Led Apple"], ["band", "Keith Moon"], ["album", "Off the Wall"], ["genre", "Pop"], ["chord", "Bmaj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Infinite F"], ["band", "Simply Red"], ["album", "The Marshall Mathers LP"], ["genre", "Blues"], ["chord", "Abm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Speed"], ["band", "Rod Stewart"], ["album", "Spice"], ["genre", "Folk"], ["chord", "E6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "APink"], ["band", "The Faces"], ["album", "Slippery When Wet"], ["genre", "Blues"], ["chord", "C"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "EXO"], ["band", "U2"], ["album", "Dirty Dancing"], ["genre", "World"], ["chord", "Adom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Boys Republic"], ["band", "The Cure"], ["album", "Falling into You"], ["genre", "Rock"], ["chord", "Cm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MASC"], ["band", "Dizzy Gillespie"], ["album", "Abbey Road"], ["genre", "Classical"], ["chord", "A#"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Phantom"], ["band", "White Stripes"], ["album", "Bad"], ["genre", "World"], ["chord", "F#dim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "24K"], ["band", "The Who"], ["album", "Bad"], ["genre", "Country"], ["chord", "B#m7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pristin"], ["band", "Ozzy Osbourne"], ["album", "Flashdance: Original Soundtrack from the Motion Picture"], ["genre", "Non Music"], ["chord", "G-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AlphaBat"], ["band", "Coldplay"], ["album", "Confessions"], ["genre", "Blues"], ["chord", "Ab-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Favorite"], ["band", "Nina Simone"], ["album", "The Eminem Show"], ["genre", "Country"], ["chord", "B#7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Momoland"], ["band", "Radiohead"], ["album", "Flashdance: Original Soundtrack from the Motion Picture"], ["genre", "World"], ["chord", "Em7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "C-Real"], ["band", "Program The Dead"], ["album", "I Dreamed a Dream"], ["genre", "Stage And Screen"], ["chord", "Dbmaj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sonamoo"], ["band", "Elvis Costello"], ["album", "Happy Nation"], ["genre", "Reggae"], ["chord", "Bbm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AlphaBat"], ["band", "Ryan Adams"], ["album", "The Woman in Me"], ["genre", "Non Music"], ["chord", "C#"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Legend"], ["band", "Billy Idol"], ["album", "Flashdance: Original Soundtrack from the Motion Picture"], ["genre", "Jazz"], ["chord", "Am"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ladies' Code"], ["band", "Grace Jones"], ["album", "Nevermind"], ["genre", "Stage And Screen"], ["chord", "B#dim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BESTie"], ["band", "Captain Beefheart"], ["album", "Rumours"], ["genre", "Soul"], ["chord", "D#maj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss A"], ["band", "Neil Young"], ["album", " Book I"], ["genre", "Non Music"], ["chord", "C7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pristin"], ["band", "The Libertines"], ["album", "Let's Talk About Love"], ["genre", "Pop"], ["chord", "Dm"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hash Tag"], ["band", "Pearl Jam"], ["album", "The Colour of My Love"], ["genre", "Funk"], ["chord", "Bb-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "K-Much"], ["band", "Chic"], ["album", "Rumours"], ["genre", "Pop"], ["chord", "Dm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Trouble Maker"], ["band", "O.A.R."], ["album", "Slippery When Wet"], ["genre", "Rap"], ["chord", "A#m7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Golden Child"], ["band", "The Faces"], ["album", "Tracy Chapman"], ["genre", "Pop"], ["chord", "D7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Seventeen"], ["band", "Velvet Revolver"], ["album", "Rumours"], ["genre", "Latin"], ["chord", "G6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Boys Republic"], ["band", "Roy Hargrove"], ["album", "Bad"], ["genre", "Pop"], ["chord", "A#m7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Crayon Pop"], ["band", "Madonna"], ["album", "Spice"], ["genre", "Classical"], ["chord", "B#m7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Red Velvet"], ["band", "Nina Simone"], ["album", "Dirty Dancing"], ["genre", "Electronic"], ["chord", "E#7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MOBB"], ["band", "Rory Gallagher"], ["album", "Supernatural"], ["genre", "Non Music"], ["chord", "Fbdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Red Velvet"], ["band", "PJ Harvey"], ["album", "HIStory: Past"], ["genre", "Blues"], ["chord", "G-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Black Pink"], ["band", "Arctic Monkeys"], ["album", "Whitney"], ["genre", "Stage And Screen"], ["chord", "Bm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Vromance"], ["band", "Afrika Bambaataa"], ["album", "The Bodyguard"], ["genre", "Funk"], ["chord", "G7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZE:A"], ["band", "Max Roach"], ["album", "The Wall"], ["genre", "Rap"], ["chord", "E#"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BTL"], ["band", "Tom Waits"], ["album", "Back in Black"], ["genre", "World"], ["chord", "Cbm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "N-Train"], ["band", "Alan Parsons"], ["album", "The Dark Side of the Moon"], ["genre", "Country"], ["chord", "Bm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "DIA"], ["band", "Thin Lizzy"], ["album", "Hotel California"], ["genre", "Classical"], ["chord", "F#maj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bob Girls"], ["band", "The Birthday Party"], ["album", "Dookie"], ["genre", "Electronic"], ["chord", "Dm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Led Apple"], ["band", "White Stripes"], ["album", "Led Zeppelin IV"], ["genre", "Reggae"], ["chord", "C#6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Vromance"], ["band", "Eric Clapton"], ["album", "Come Away with Me"], ["genre", "Jazz"], ["chord", "E#"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lunafly"], ["band", "Iggy Pop"], ["album", " Present and Future"], ["genre", "Non Music"], ["chord", "C#dim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oh My Girl"], ["band", "Syd Barrett"], ["album", "Daydream"], ["genre", "Funk"], ["chord", "Ebm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "TRCNG"], ["band", "Joy Division"], ["album", "Saturday Night Fever"], ["genre", "Country"], ["chord", "Abmaj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Minx"], ["band", "Rod Stewart"], ["album", "High School Musical 2"], ["genre", "Rock"], ["chord", "Bb-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AOA Black"], ["band", "Phish"], ["album", "Come Away with Me"], ["genre", "Pop"], ["chord", "G#-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "K.A.R.D"], ["band", "Velvet Revolver"], ["album", "Hotel California"], ["genre", "Hip Hop"], ["chord", "Ddom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "NU'EST W"], ["band", "Bauhaus"], ["album", "Unplugged"], ["genre", "Soul"], ["chord", "Bbmaj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-Jax"], ["band", "Jimi Hendrix"], ["album", "Oops!... I Did It Again"], ["genre", "Latin"], ["chord", "B#maj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The East Light"], ["band", "Jimi Hendrix"], ["album", "Daydream"], ["genre", "Non Music"], ["chord", "G#dom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "C-Clown"], ["band", "The Libertines"], ["album", "Tapestry"], ["genre", "Jazz"], ["chord", "D6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Skarf"], ["band", "Tom Jones"], ["album", "Let's Talk About Love"], ["genre", "Hip Hop"], ["chord", "F#-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "She'z"], ["band", "Adam and the Ants"], ["album", "Gold: Greatest Hits"], ["genre", "Jazz"], ["chord", "Bbmaj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "High4"], ["band", "David Bowie"], ["album", "Midnight Memories"], ["genre", "Rap"], ["chord", "Gdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A.C.E"], ["band", "The Mars Volta"], ["album", "Backstreet Boys"], ["genre", "Latin"], ["chord", "Gbdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "C.I.V.A"], ["band", "Brian Wilson"], ["album", "Millennium"], ["genre", "Folk"], ["chord", "Cbm"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Fiestar"], ["band", "Nina Simone"], ["album", "Breakfast in America"], ["genre", "World"], ["chord", "G"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Duetto"], ["band", "Leonard Cohen"], ["album", "Midnight Memories"], ["genre", "Non Music"], ["chord", "Fm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "HELLOVENUS"], ["band", "Keith Moon"], ["album", " Book I"], ["genre", "Electronic"], ["chord", "B#m"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Winner"], ["band", "John Coltrane"], ["album", "1"], ["genre", "Country"], ["chord", "Fbm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bigflo"], ["band", "Cat Anderson"], ["album", "Bad"], ["genre", "Non Music"], ["chord", "Fb7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gangkiz"], ["band", "The Mars Volta"], ["album", "25"], ["genre", "Pop"], ["chord", "Am7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "15&"], ["band", "Prince"], ["album", "1"], ["genre", "Classical"], ["chord", "Gbm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Monsta X"], ["band", "Thelonius Monk"], ["album", "Led Zeppelin IV"], ["genre", "Soul"], ["chord", "Bbm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bolbbalgan4"], ["band", "Frightened Rabbit"], ["album", "The Eminem Show"], ["genre", "Non Music"], ["chord", "A"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "VIXX"], ["band", "Noel Gallagher"], ["album", "Frozen"], ["genre", "Classical"], ["chord", "F#dim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.0ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rubber Soul"], ["band", "Ozzy Osbourne"], ["album", " Present and Future"], ["genre", "Rock"], ["chord", "Cbdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "QBS"], ["band", "Ryan Adams"], ["album", " Book I"], ["genre", "World"], ["chord", "Bb6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chocolat"], ["band", "Iggy Pop"], ["album", "Metallica"], ["genre", "Rap"], ["chord", "C#m7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "D.Holic"], ["band", "Blur"], ["album", "Nevermind"], ["genre", "Reggae"], ["chord", "D#7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cupid"], ["band", "John Coltrane"], ["album", "Falling into You"], ["genre", "Pop"], ["chord", "C"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The SeeYa"], ["band", "Cream"], ["album", "I Dreamed a Dream"], ["genre", "Latin"], ["chord", "A#dim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Boys Republic"], ["band", "George Michael"], ["album", "The Sign"], ["genre", "Pop"], ["chord", "Gmaj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "5urprise"], ["band", "Deepest Blue"], ["album", "The Colour of My Love"], ["genre", "Pop"], ["chord", "Fb7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Girls' Generation-TTS"], ["band", "The Slits"], ["album", "Can't Slow Down"], ["genre", "Rap"], ["chord", "Bm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "EXID"], ["band", "The Who"], ["album", "Cross Road"], ["genre", "Blues"], ["chord", "Fb-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Boys Republic"], ["band", "John Lydon"], ["album", "The Colour of My Love"], ["genre", "Rock"], ["chord", "G#m7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MYTEEN"], ["band", "O.A.R."], ["album", "Backstreet's Back"], ["genre", "Hip Hop"], ["chord", "A#m"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hi Suhyun"], ["band", "Marianne Faithfull"], ["album", "Backstreet's Back"], ["genre", "Funk"], ["chord", "Gmaj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wa$$up"], ["band", "Sinead O'connor"], ["album", "Off the Wall"], ["genre", "Pop"], ["chord", "F#m7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ladies' Code"], ["band", "White Stripes"], ["album", "Happy Nation"], ["genre", "Folk"], ["chord", "Bbm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "2000 Won"], ["band", "Syd Barrett"], ["album", "Millennium"], ["genre", "Rap"], ["chord", "D#6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BTS"], ["band", "PJ Harvey"], ["album", "The Joshua Tree"], ["genre", "Blues"], ["chord", "G#6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tasty"], ["band", "Miles Davis"], ["album", "...Baby One More Time"], ["genre", "Classical"], ["chord", "G#m7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "F.Cuz"], ["band", "Annie Lennox"], ["album", "Dirty Dancing"], ["genre", "Latin"], ["chord", "Ebdom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "K.A.R.D"], ["band", "Cootie Williams"], ["album", "Recovery"], ["genre", "Pop"], ["chord", "E#dom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Orange Caramel"], ["band", "The Kinks"], ["album", "Let's Talk About Love"], ["genre", "Rock"], ["chord", "Dbm"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gugudan"], ["band", "Muse"], ["album", "High School Musical 2"], ["genre", "Jazz"], ["chord", "Db7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AOA Cream"], ["band", "Chuck Berry"], ["album", "Viva la Vida or Death and All His Friends"], ["genre", "Latin"], ["chord", "A"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MYTEEN"], ["band", "Carlos Santana"], ["album", "Nevermind"], ["genre", "Folk"], ["chord", "Gbdom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "CNBLUE"], ["band", "Johnny Cash"], ["album", "Metallica"], ["genre", "Hip Hop"], ["chord", "Bdim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Boss"], ["band", "Tom Robinson"], ["album", "Grease: The Original Soundtrack from the Motion Picture"], ["genre", "Rap"], ["chord", "Fbmaj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "EXO"], ["band", "Dr Feelgood"], ["album", "Let's Talk About Love"], ["genre", "Electronic"], ["chord", "Cdom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Seven O'Clock"], ["band", "Coldplay"], ["album", "Frozen"], ["genre", "Pop"], ["chord", "F#6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "M.I.B"], ["band", "Elvis Costello"], ["album", "The Woman in Me"], ["genre", "Hip Hop"], ["chord", "F#-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "B1A4"], ["band", "Elvis Presley"], ["album", "Whitney Houston"], ["genre", "Electronic"], ["chord", "C"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "IZ"], ["band", "Lenny Kravitz"], ["album", "Faith"], ["genre", "Country"], ["chord", "Cb"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "JJCC"], ["band", "Chris Isaak"], ["album", "Boston"], ["genre", "Rock"], ["chord", "Dbm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "NCT"], ["band", "The Libertines"], ["album", "The Sign"], ["genre", "Blues"], ["chord", "Emaj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Stellar"], ["band", "Kasabian"], ["album", "The Marshall Mathers LP"], ["genre", "Stage And Screen"], ["chord", "Fbmaj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.0ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bigflo"], ["band", "Madonna"], ["album", "Whitney"], ["genre", "Electronic"], ["chord", "Fb6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "N-Train"], ["band", "Cat Anderson"], ["album", "Flashdance: Original Soundtrack from the Motion Picture"], ["genre", "Soul"], ["chord", "Cbm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BtoB"], ["band", "Tina Turner"], ["album", "HIStory: Past"], ["genre", "Electronic"], ["chord", "C#-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "DIA"], ["band", "The Cranberries"], ["album", "Metallica"], ["genre", "Soul"], ["chord", "Fb6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BTL"], ["band", "R.E.M."], ["album", "Come On Over"], ["genre", "Classical"], ["chord", "Fmaj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tahiti"], ["band", "Ella Fitzgerald"], ["album", "21"], ["genre", "Reggae"], ["chord", "Cm"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dal Shabet"], ["band", "K.D Lang"], ["album", "Breakfast in America"], ["genre", "Blues"], ["chord", "Ebdim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Phantom"], ["band", "Herbie Hancock"], ["album", "Come Away with Me"], ["genre", "Funk"], ["chord", "Gbm"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brave Girls"], ["band", "Billy Idol"], ["album", "21"], ["genre", "Soul"], ["chord", "Ebmaj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Block B"], ["band", "Blinker The Star"], ["album", "Brothers in Arms"], ["genre", "Stage And Screen"], ["chord", "Dbmaj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Phantom"], ["band", "The La's"], ["album", "Their Greatest Hits (1971–1975)"], ["genre", "Soul"], ["chord", "Fdom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "NCT"], ["band", "Sex Pistols"], ["album", "X&Y"], ["genre", "Non Music"], ["chord", "Cdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.0ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MYTEEN"], ["band", "Muse"], ["album", "No Jacket Required"], ["genre", "Jazz"], ["chord", "Ddom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dal Shabet"], ["band", "Frank Zappa"], ["album", "Whitney Houston"], ["genre", "World"], ["chord", "Bdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Day6"], ["band", "Program The Dead"], ["album", " Present and Future"], ["genre", "Reggae"], ["chord", "Bbdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Day6"], ["band", "Sonic Youth"], ["album", "Their Greatest Hits (1971–1975)"], ["genre", "Electronic"], ["chord", "D#m7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Day6"], ["band", "Yumi Matsutoya"], ["album", "Faith"], ["genre", "Pop"], ["chord", "Bb6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Puretty"], ["band", "Frank Sinatra"], ["album", "The Bodyguard"], ["genre", "Hip Hop"], ["chord", "E#maj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "2Yoon"], ["band", "David Bowie"], ["album", "Hysteria"], ["genre", "Country"], ["chord", "Bm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "M.I.B"], ["band", "The Clash"], ["album", "The Immaculate Collection"], ["genre", "Country"], ["chord", "G#dim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "JYJ"], ["band", "Primal Scream"], ["album", "Dangerous"], ["genre", "Classical"], ["chord", "C#dim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AOA Black"], ["band", "Johnny Marr"], ["album", "Viva la Vida or Death and All His Friends"], ["genre", "World"], ["chord", "Bb6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Blady"], ["band", "Offspring"], ["album", "Flashdance: Original Soundtrack from the Motion Picture"], ["genre", "Stage And Screen"], ["chord", "B6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Trouble Maker"], ["band", "Grace Jones"], ["album", "Sgt. Pepper's Lonely Hearts Club Band"], ["genre", "Electronic"], ["chord", "G7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Momoland"], ["band", "The Smiths"], ["album", "Rumours"], ["genre", "Non Music"], ["chord", "G#m7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wanna One"], ["band", "Foo Fighters"], ["album", "Abbey Road"], ["genre", "World"], ["chord", "C-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Fiestar"], ["band", "Chrissie Hynde"], ["album", "Can't Slow Down"], ["genre", "Folk"], ["chord", "Am7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Teen Top"], ["band", "Jeff Buckley"], ["album", "True Blue"], ["genre", "Funk"], ["chord", "B-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lunafly"], ["band", "Captain Beefheart"], ["album", "Supernatural"], ["genre", "Soul"], ["chord", "Cbm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A.C.E"], ["band", "The Libertines"], ["album", "Midnight Memories"], ["genre", "Soul"], ["chord", "C#dim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Vromance"], ["band", "Paul Weller"], ["album", "The Wall"], ["genre", "Funk"], ["chord", "G#m7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "KNK"], ["band", "Ozzy Osbourne"], ["album", "Off the Wall"], ["genre", "Soul"], ["chord", "Bdom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Mr."], ["band", "The Birthday Party"], ["album", "The Eminem Show"], ["genre", "Stage And Screen"], ["chord", "E#m7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gugudan"], ["band", "Florence and the Machine"], ["album", "Dookie"], ["genre", "Classical"], ["chord", "Fdom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "She'z"], ["band", "Iggy Pop"], ["album", "Daydream"], ["genre", "Jazz"], ["chord", "Gm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Miss A"], ["band", "The Mars Volta"], ["album", "Brothers in Arms"], ["genre", "Latin"], ["chord", "Fbm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gugudan Ogu-ogu"], ["band", "Stereophonics"], ["album", "Dangerous"], ["genre", "Rock"], ["chord", "Ddom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "GOT7"], ["band", "Devo"], ["album", "Come Away with Me"], ["genre", "Folk"], ["chord", "F#m"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Infinite H"], ["band", "Dizzy Gillespie"], ["album", "Nevermind"], ["genre", "World"], ["chord", "F#maj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "EvoL"], ["band", "Rick Wright"], ["album", "The Wall"], ["genre", "Soul"], ["chord", "Cbdom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Coed School"], ["band", "Ryan Adams"], ["album", "Led Zeppelin IV"], ["genre", "Classical"], ["chord", "Gm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "S.I.S"], ["band", "Beck"], ["album", "1"], ["genre", "Stage And Screen"], ["chord", "Adim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "C-Real"], ["band", "Brian Wilson"], ["album", "Gold: Greatest Hits"], ["genre", "Rap"], ["chord", "Eb"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Mr."], ["band", "Syd Barrett"], ["album", "Faith"], ["genre", "Funk"], ["chord", "G#m"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The East Light"], ["band", "Nigel Kennedy"], ["album", " Book I"], ["genre", "Stage And Screen"], ["chord", "B"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "N-Train"], ["band", "Sex Pistols"], ["album", "Dookie"], ["genre", "Pop"], ["chord", "F#dom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Block B"], ["band", "Tom Jones"], ["album", "No Jacket Required"], ["genre", "World"], ["chord", "G#maj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nine Muses"], ["band", "Marilyn Manson"], ["album", "X&Y"], ["genre", "Non Music"], ["chord", "Bbm"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Spica"], ["band", " The"], ["album", "Jagged Little Pill"], ["genre", "Hip Hop"], ["chord", "D#dom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (1.0ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "C-Real"], ["band", "David Gilmour"], ["album", " Present and Future"], ["genre", "World"], ["chord", "G6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Snuper"], ["band", "The Specials"], ["album", "Spice"], ["genre", "Pop"], ["chord", "Bm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "HOTSHOT"], ["band", "K.D Lang"], ["album", "Tapestry"], ["genre", "Country"], ["chord", "Fdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ToHeart"], ["band", "Run-D.M.C."], ["album", "Faith"], ["genre", "Electronic"], ["chord", "Fmaj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "UP10TION"], ["band", "Rick Wright"], ["album", "Backstreet Boys"], ["genre", "Rap"], ["chord", "Dbdim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "N-Train"], ["band", "Phil Collins"], ["album", "Led Zeppelin IV"], ["genre", "Soul"], ["chord", "Cdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "HALO"], ["band", "Captain Beefheart"], ["album", "Titanic: Music from the Motion Picture"], ["genre", "Rap"], ["chord", "F#-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Favorite"], ["band", "Radiohead"], ["album", "Let's Talk About Love"], ["genre", "Classical"], ["chord", "D#maj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "HELLOVENUS"], ["band", "Led Zeppelin"], ["album", "Spice"], ["genre", "Reggae"], ["chord", "Fdim7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "CNBLUE"], ["band", "Manic Street Preachers"], ["album", "Hysteria"], ["genre", "Electronic"], ["chord", "Bbdom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Boss"], ["band", "Björk"], ["album", "The Sign"], ["genre", "Pop"], ["chord", "Gbm"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MOBB"], ["band", "John Coltrane"], ["album", "Appetite for Destruction"], ["genre", "Country"], ["chord", "Eb6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Badkiz"], ["band", "Captain Beefheart"], ["album", "Tracy Chapman"], ["genre", "Pop"], ["chord", "E#dom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bambino"], ["band", "Beck"], ["album", "Nevermind"], ["genre", "Jazz"], ["chord", "Dbm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A.C.E"], ["band", "Carlos Santana"], ["album", "21"], ["genre", "Funk"], ["chord", "G#-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "UP10TION"], ["band", "Fats Domino"], ["album", "Greatest Hits"], ["genre", "Hip Hop"], ["chord", "C-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "HELLOVENUS"], ["band", "B.B. King"], ["album", "The Eminem Show"], ["genre", "Classical"], ["chord", "Gbdim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Black Pink"], ["band", "Madonna"], ["album", "Happy Nation"], ["genre", "Rock"], ["chord", "B-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Royal Pirates"], ["band", "The Cure"], ["album", "Cross Road"], ["genre", "Stage And Screen"], ["chord", "Dbdim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Girl's Day"], ["band", "The Police"], ["album", "Titanic: Music from the Motion Picture"], ["genre", "Rap"], ["chord", "G7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "JJ Project"], ["band", "Noel Gallagher"], ["album", "Bat Out of Hell"], ["genre", "Blues"], ["chord", "D#dim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pentagon"], ["band", "Grace Jones"], ["album", "...Baby One More Time"], ["genre", "Rock"], ["chord", "Ebm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Vromance"], ["band", "Nick Cave"], ["album", "Dangerous"], ["genre", "Non Music"], ["chord", "Ebmaj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Vromance"], ["band", "Nirvana"], ["album", "True Blue"], ["genre", "Folk"], ["chord", "Bm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Mr."], ["band", "Yumi Matsutoya"], ["album", "The Bodyguard"], ["genre", "Non Music"], ["chord", "Bb"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Phantom"], ["band", "Prince"], ["album", "The Woman in Me"], ["genre", "Latin"], ["chord", "F#6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "VIXX LR"], ["band", "Kiss"], ["album", "The Sign"], ["genre", "Rap"], ["chord", "B6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BESTie"], ["band", "Cootie Williams"], ["album", "X&Y"], ["genre", "Electronic"], ["chord", "C6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nine Muses"], ["band", "Carlos Santana"], ["album", "Titanic: Music from the Motion Picture"], ["genre", "Electronic"], ["chord", "G#dom7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "C-Clown"], ["band", "Max Roach"], ["album", "21"], ["genre", "Reggae"], ["chord", "D#maj"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "N.Flying"], ["band", "Keith Richards"], ["album", "Grease: The Original Soundtrack from the Motion Picture"], ["genre", "World"], ["chord", "Cb7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "iKon"], ["band", " The"], ["album", "Backstreet Boys"], ["genre", "Hip Hop"], ["chord", "D#m7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MOBB"], ["band", "Queen"], ["album", "The Joshua Tree"], ["genre", "Hip Hop"], ["chord", "Em"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "B1A4"], ["band", "Led Zeppelin"], ["album", "Viva la Vida or Death and All His Friends"], ["genre", "Rock"], ["chord", "Dm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "GD&TOP"], ["band", "The Cranberries"], ["album", "Whitney Houston"], ["genre", "Jazz"], ["chord", "F#dim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "B1A4"], ["band", "Ella Fitzgerald"], ["album", "Slippery When Wet"], ["genre", "Pop"], ["chord", "Db7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "5urprise"], ["band", "Nigel Kennedy"], ["album", "Dookie"], ["genre", "Hip Hop"], ["chord", "E#maj7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "N-Sonic"], ["band", "Herbie Hancock"], ["album", "Brothers in Arms"], ["genre", "Rap"], ["chord", "Cm7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "GP Basic"], ["band", "Marc Bolan"], ["album", "The Dark Side of the Moon"], ["genre", "Country"], ["chord", "Fb-7"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Romeo"], ["band", "Beck"], ["album", "Bat Out of Hell"], ["genre", "Jazz"], ["chord", "Fbm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "She'z"], ["band", "Nirvana"], ["album", "Slippery When Wet"], ["genre", "World"], ["chord", "Bbm7b5"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mr. Mr."], ["band", "Mumford and Sons"], ["album", "Frozen"], ["genre", "Stage And Screen"], ["chord", "F#dim"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSongs Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Coed School"], ["band", "Bob Dylan"], ["album", "Backstreet's Back"], ["genre", "World"], ["chord", "E#6"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "songs"[0m
+  [1m[36mSongs Load (0.7ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSongs Load (1.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE (chord LIKE 'C') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSongs Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE (band = 'The Bretles') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSongs Load (2.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE (band = The Bretles) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSongs Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE (band = 'The Jam') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSongs Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE (band = 'The Bretles') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSongs Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE (chord = 'C') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "songs" WHERE (chord = 'C')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "songs" WHERE (chord LIKE 'C')[0m
+  [1m[36mSongs Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE (genre LIKE '%rock%') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "songs" WHERE (genre LIKE '%rock%')[0m
+  [1m[36mSongs Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE (band LIKE '%The%') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "songs" WHERE (band LIKE '%The%')[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT("songs"."band") FROM "songs" WHERE (band LIKE '%The%')[0m
+  [1m[36mSongs Load (1.2ms)[0m  [1m[34mSELECT  "songs"."band" FROM "songs" WHERE (band LIKE '%The%') LIMIT ?[0m  [["LIMIT", 11]]
