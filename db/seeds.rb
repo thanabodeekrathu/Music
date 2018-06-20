@@ -10,7 +10,11 @@
 	Songs.create(name: Faker::Kpop.iii_groups, band: Faker::Music.band, album: Faker::Music.album, genre: Faker::Music.genre, chord: Faker::Music.chord)
 end
 
+#Homework Ruby On Rails - Models 
 
-Songs.where("chord LIKE 'C'") or Songs.where("chord = 'C'")
+# find record "chord = C"
+Songs.where("chord = 'C'")
+# find record "band = The Bretles"
 Songs.where("band = 'The Bretles'")
+# find record "genre %rock$""
 Songs.where("genre LIKE '%rock%'")
