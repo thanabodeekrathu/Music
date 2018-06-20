@@ -13,8 +13,10 @@ end
 #Homework Ruby On Rails - Models 
 
 # find record "chord = C"
-Songs.where("chord = 'C'")
+#==> Songs.where("chord = 'C'")
+
 # find record "band = The Bretles"
-Songs.where("band = 'The Bretles'")
+#==> Songs.where("band = 'The Bretles'")
+
 # find record "genre %rock$""
-Songs.where("genre LIKE '%rock%'")
+#==> Songs.where("genre LIKE '%rock%'")
