@@ -1,0 +1,19 @@
+<h1>New Betum</h1>
+
+<!-- <h1>Users</h1>
+<h2><======><br>
+	<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+  <% end %>
+  <%= flash[:notice2] %><br><======><br>
+  <% session[:notice2] %> -->
+
+  <!-- tag ของ ruby คือถ้าเป็น <%= %> จะเป็นการปริ้นผลลัพธ์ออกมาด้วย (tag echo)-->
+  <!-- tag ของ ruby คือถ้าเป็น <% %> จะไม่แสดงผลลัพธ์ออกมา -->
+<!-- </h2> -->
+
+
+
+<%= render 'form', betum: @betum %>
+
+<%= link_to 'Back', beta_path %>
