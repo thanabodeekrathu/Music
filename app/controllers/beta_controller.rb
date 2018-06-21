@@ -7,8 +7,8 @@ class BetaController < ApplicationController
     @beta = Betum.all
     # flash[:notice2] = "nil"
     # session[:notice2] = "nil222"
-    data = {data: {value: "10", id: "10"}}
-    render json: @beta
+    # data = {data: {value: "10", id: "10"}}
+    # render json: @beta
   end
 
   # GET /beta/1
