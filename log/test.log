@@ -1,0 +1,1625 @@
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "beta"[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "beta" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "phone" text, "age" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "band" varchar, "album" varchar, "genre" varchar, "chord" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180621052751)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180620052338),
+(20180621043558);
+
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2018-06-24 11:29:58.583315"], ["updated_at", "2018-06-24 11:29:58.583315"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 21:47:14 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 478ms (Views: 460.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 21:49:15 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 290ms (Views: 273.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 21:50:30 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 242ms (Views: 227.6ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 22:00:39 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 284ms (Views: 267.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 22:03:40 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 261ms (Views: 244.0ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 22:15:23 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 262ms (Views: 246.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 22:15:39 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 247ms (Views: 230.8ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 22:15:50 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 253ms (Views: 237.4ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 22:16:47 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 267ms (Views: 251.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 22:17:22 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 271ms (Views: 254.6ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 22:17:32 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 252ms (Views: 233.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-24 22:17:49 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 248ms (Views: 232.7ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "IZ"], ["band", "Frank Sinatra"], ["album", "True Blue"], ["genre", "Pop"], ["chord", "E#6"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "VIXX LR"], ["band", "Manic Street Preachers"], ["album", "Whitney Houston"], ["genre", "Country"], ["chord", "Db"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "CNBLUE"], ["band", "Max Roach"], ["album", "Nevermind"], ["genre", "Funk"], ["chord", "C#-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "HELLOVENUS"], ["band", "Primal Scream"], ["album", "Falling into You"], ["genre", "Blues"], ["chord", "Fbdom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "JJCC"], ["band", "Johnny Borrell"], ["album", "Titanic: Music from the Motion Picture"], ["genre", "Folk"], ["chord", "A#dom7"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "TRCNG"], ["band", "David Bowie"], ["album", "Unplugged"], ["genre", "Classical"], ["chord", "Cdim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Legend"], ["band", "Pat Metheny"], ["album", "HIStory: Past"], ["genre", "Jazz"], ["chord", "Emaj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.7ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "KNK"], ["band", "U2"], ["album", "Millennium"], ["genre", "Classical"], ["chord", "D"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.1ms)
+  [1m[35m (2.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "C-Clown"], ["band", "Keith Moon"], ["album", " Present and Future"], ["genre", "Electronic"], ["chord", "A#maj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "I.B.I"], ["band", "Noel Gallagher"], ["album", "Viva la Vida or Death and All His Friends"], ["genre", "Latin"], ["chord", "Fbm"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "B.I.G"], ["band", "George Michael"], ["album", "Whitney"], ["genre", "Hip Hop"], ["chord", "Bdom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.1ms)
+  [1m[35m (1.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AOA Black"], ["band", "Cream"], ["album", "Gold: Greatest Hits"], ["genre", "Electronic"], ["chord", "A#dim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "LC9"], ["band", "Herbie Hancock"], ["album", "Cross Road"], ["genre", "Country"], ["chord", "Bbm"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Seven O'Clock"], ["band", "Chrissie Hynde"], ["album", "The Dark Side of the Moon"], ["genre", "World"], ["chord", "Fm7b5"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (70.9ms)
+  [1m[35m (6.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "5urprise"], ["band", "Jeff Beck"], ["album", "The Bodyguard"], ["genre", "World"], ["chord", "Dbmaj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "QBS"], ["band", "Chic"], ["album", "Tapestry"], ["genre", "Non Music"], ["chord", "Fbdim7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "LC9"], ["band", "Buzzcocks"], ["album", "Music Box"], ["genre", "Rap"], ["chord", "Fb"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.8ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "M.Pire"], ["band", "Nina Simone"], ["album", "Tapestry"], ["genre", "Classical"], ["chord", "C#maj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "DMTN"], ["band", "The Clash"], ["album", "The Marshall Mathers LP"], ["genre", "Rock"], ["chord", "Bbdim"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bob Girls"], ["band", "The Clash"], ["album", "Brothers in Arms"], ["genre", "Classical"], ["chord", "A7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (2.3ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sistar19"], ["band", "Alan Parsons"], ["album", " Present and Future"], ["genre", "World"], ["chord", "G"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "QBS"], ["band", "Red Hot Chili Peppers"], ["album", "Whitney Houston"], ["genre", "Soul"], ["chord", "A"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Boyz"], ["band", "U2"], ["album", "Oops!... I Did It Again"], ["genre", "World"], ["chord", "Ab-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Teen Top"], ["band", "Dr Feelgood"], ["album", "...Baby One More Time"], ["genre", "Latin"], ["chord", "F#m7"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "NU'EST"], ["band", "Captain Beefheart"], ["album", "The Joshua Tree"], ["genre", "Latin"], ["chord", "F#6"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Phantom"], ["band", "James Brown"], ["album", "The Eminem Show"], ["genre", "Non Music"], ["chord", "Cmaj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.5ms)
+  [1m[35m (11.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "iKon"], ["band", "The Beatles"], ["album", "Like a Virgin"], ["genre", "Latin"], ["chord", "D7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Coed School"], ["band", "Carlos Santana"], ["album", "Greatest Hits"], ["genre", "Folk"], ["chord", "Bbmaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sistar"], ["band", "Madonna"], ["album", "Gold: Greatest Hits"], ["genre", "Country"], ["chord", "E-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.1ms)
+  [1m[35m (3.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AOA Cream"], ["band", "Squeeze"], ["album", "1"], ["genre", "Soul"], ["chord", "Bbm"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BtoB"], ["band", "Hugh Masekela"], ["album", "Sgt. Pepper's Lonely Hearts Club Band"], ["genre", "Electronic"], ["chord", "Cdim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Puretty"], ["band", "Tom Robinson"], ["album", "Like a Virgin"], ["genre", "Jazz"], ["chord", "Eb-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.1ms)
+  [1m[35m (3.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pentagon"], ["band", "Fats Domino"], ["album", "Nevermind"], ["genre", "Hip Hop"], ["chord", "B#dim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nine Muses A"], ["band", "Björk"], ["album", "Whitney"], ["genre", "Rap"], ["chord", "F#m"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wings"], ["band", "Coldplay"], ["album", "Can't Slow Down"], ["genre", "Folk"], ["chord", "C#m7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.1ms)
+  [1m[35m (11.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "EXO"], ["band", "David Gilmour"], ["album", "Jagged Little Pill"], ["genre", "Rap"], ["chord", "E#maj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Madtown"], ["band", "David Gilmour"], ["album", "Recovery"], ["genre", "Reggae"], ["chord", "Bbdim"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Snuper"], ["band", "Ryan Adams"], ["album", "Nevermind"], ["genre", "World"], ["chord", "Bbmaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.6ms)
+  [1m[35m (12.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dream Catcher"], ["band", "Ian Dury"], ["album", "Nevermind"], ["genre", "World"], ["chord", "Bm7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Blady"], ["band", "The Undertones"], ["album", "No Jacket Required"], ["genre", "Non Music"], ["chord", "Em7"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Infinite"], ["band", "New Order"], ["album", "Sgt. Pepper's Lonely Hearts Club Band"], ["genre", "Rock"], ["chord", "E7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.8ms)
+  [1m[35m (3.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Top Secret"], ["band", "Cat Stevens"], ["album", "Off the Wall"], ["genre", "Electronic"], ["chord", "E7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "NCT"], ["band", "Yumi Matsutoya"], ["album", "Come On Over"], ["genre", "Electronic"], ["chord", "Dm7b5"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Badkiz"], ["band", "PJ Harvey"], ["album", "The Joshua Tree"], ["genre", "World"], ["chord", "Cdim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Victon"], ["band", "Phish"], ["album", "Faith"], ["genre", "Stage And Screen"], ["chord", "Edim"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lip Service"], ["band", "The Cramps"], ["album", "Titanic: Music from the Motion Picture"], ["genre", "Non Music"], ["chord", "Bdim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cupid"], ["band", "Jimi Hendrix"], ["album", "Unplugged"], ["genre", "Stage And Screen"], ["chord", "E"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.0ms)
+  [1m[35m (4.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "IZ"], ["band", "Al Foster"], ["album", "Appetite for Destruction"], ["genre", "World"], ["chord", "F#"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "C-Clown"], ["band", "Rory Gallagher"], ["album", " Book I"], ["genre", "Classical"], ["chord", "Gbmaj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Golden Child"], ["band", "Tina Turner"], ["album", "Hotel California"], ["genre", "Folk"], ["chord", "Ebm"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hash Tag"], ["band", "Marianne Faithfull"], ["album", "X&Y"], ["genre", "Stage And Screen"], ["chord", "Emaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "B.A.P"], ["band", "Dizzy Gillespie"], ["album", "Legend: The Best of Bob Marley & The Wailers"], ["genre", "Soul"], ["chord", "Abdim"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The East Light"], ["band", "Flaming Lips"], ["album", "The Sign"], ["genre", "Pop"], ["chord", "A#7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.4ms)
+  [1m[35m (3.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AA"], ["band", "The Police"], ["album", "Let's Talk About Love"], ["genre", "Blues"], ["chord", "Fm"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "CLC"], ["band", "Elvis Presley"], ["album", "Greatest Hits"], ["genre", "Blues"], ["chord", "F7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "IN2IT"], ["band", "Joy Division"], ["album", "Backstreet Boys"], ["genre", "Rap"], ["chord", "C#maj7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AlphaBat"], ["band", "The Faces"], ["album", "Millennium"], ["genre", "World"], ["chord", "G#maj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A.C.E"], ["band", "Hugh Masekela"], ["album", "Frozen"], ["genre", "Electronic"], ["chord", "Gbmaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hash Tag"], ["band", "U2"], ["album", "I Dreamed a Dream"], ["genre", "Hip Hop"], ["chord", "Gb6"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.4ms)
+  [1m[35m (2.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "IN2IT"], ["band", "The Faces"], ["album", "1"], ["genre", "Blues"], ["chord", "Cbmaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Trouble Maker"], ["band", "Nina Simone"], ["album", "Dookie"], ["genre", "Stage And Screen"], ["chord", "G#m7b5"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The East Light"], ["band", "Blur"], ["album", "Happy Nation"], ["genre", "Rock"], ["chord", "C#"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "EvoL"], ["band", "Pink Floyd"], ["album", "Saturday Night Fever"], ["genre", "Stage And Screen"], ["chord", "Bm"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BTL"], ["band", "Frightened Rabbit"], ["album", "The Colour of My Love"], ["genre", "Pop"], ["chord", "Db6"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Infinite F"], ["band", "Adam and the Ants"], ["album", "Let's Talk About Love"], ["genre", "Rap"], ["chord", "F#m7b5"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.0ms)
+  [1m[35m (3.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ToHeart"], ["band", "Brian Wilson"], ["album", "Jagged Little Pill"], ["genre", "Country"], ["chord", "A#dim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Teen Top"], ["band", "Rufus Wainwright"], ["album", "Whitney Houston"], ["genre", "Jazz"], ["chord", "E#6"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "VAV"], ["band", "Bob Dylan"], ["album", "Whitney Houston"], ["genre", "Reggae"], ["chord", "Dbm"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Speed"], ["band", "Pearl Jam"], ["album", "Oops!... I Did It Again"], ["genre", "Soul"], ["chord", "F#dom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "M.Pire"], ["band", "Bob Marley (and the Wailers)"], ["album", "Hysteria"], ["genre", "Pop"], ["chord", "Bm7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "4Ten"], ["band", "Radiohead"], ["album", "Born in the U.S.A."], ["genre", "World"], ["chord", "Adom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.0ms)
+  [1m[35m (3.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cosmic Girls"], ["band", "R.E.M."], ["album", "Come Away with Me"], ["genre", "Rap"], ["chord", "F#-7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "D.Holic"], ["band", "John Lydon"], ["album", "Backstreet's Back"], ["genre", "Stage And Screen"], ["chord", "A#m"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Boys Republic"], ["band", "Florence and the Machine"], ["album", "The Woman in Me"], ["genre", "Rock"], ["chord", "Eb6"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.3ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "GFriend"], ["band", "Captain Beefheart"], ["album", "Unplugged"], ["genre", "World"], ["chord", "Abmaj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "GFriend"], ["band", "Neil Young"], ["album", "Dookie"], ["genre", "Classical"], ["chord", "Gmaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "UNICORN"], ["band", "Jeff Beck"], ["album", "High School Musical 2"], ["genre", "Stage And Screen"], ["chord", "Edom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.1ms)
+  [1m[35m (3.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "UNICORN"], ["band", "David Gilmour"], ["album", "The Marshall Mathers LP"], ["genre", "Funk"], ["chord", "Bmaj"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sistar"], ["band", "Manic Street Preachers"], ["album", "Tapestry"], ["genre", "Stage And Screen"], ["chord", "G#m7b5"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Snuper"], ["band", "Ian Dury"], ["album", "Tracy Chapman"], ["genre", "Classical"], ["chord", "F#m7b5"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AOA Cream"], ["band", "The Police"], ["album", "Born in the U.S.A."], ["genre", "Soul"], ["chord", "Cmaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Imfact"], ["band", " The"], ["album", "The Woman in Me"], ["genre", "Soul"], ["chord", "Cb"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "VIXX LR"], ["band", "David Gilmour"], ["album", "Dangerous"], ["genre", "Folk"], ["chord", "Eb"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.5ms)
+  [1m[35m (3.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Infinite"], ["band", "Cream"], ["album", "Midnight Memories"], ["genre", "Blues"], ["chord", "Ebdom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "HALO"], ["band", "Neil Young"], ["album", "Viva la Vida or Death and All His Friends"], ["genre", "Soul"], ["chord", "C#-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ZE:A"], ["band", "Madness"], ["album", "Legend: The Best of Bob Marley & The Wailers"], ["genre", "Classical"], ["chord", "B#-7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BTS"], ["band", "Herbie Hancock"], ["album", "Jagged Little Pill"], ["genre", "Non Music"], ["chord", "Fb7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Puretty"], ["band", "The Police"], ["album", "Brothers in Arms"], ["genre", "Funk"], ["chord", "Fbmaj"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "M.Pire"], ["band", "Brian Wilson"], ["album", "Dirty Dancing"], ["genre", "Electronic"], ["chord", "A#maj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.0ms)
+  [1m[35m (7.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Longguo & Shihyun"], ["band", "Ozzy Osbourne"], ["album", "True Blue"], ["genre", "Hip Hop"], ["chord", "Gdom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Orange Caramel"], ["band", "Joy Division"], ["album", "Oops!... I Did It Again"], ["genre", "Rock"], ["chord", "C#dim"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Black Pink"], ["band", "Yumi Matsutoya"], ["album", "Tapestry"], ["genre", "World"], ["chord", "Gdom7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Speed"], ["band", "Noel Gallagher"], ["album", "Appetite for Destruction"], ["genre", "Soul"], ["chord", "E#maj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "F-ve Dolls"], ["band", "Lenny Kravitz"], ["album", "Supernatural"], ["genre", "Latin"], ["chord", "Fbm7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Romeo"], ["band", "Nigel Kennedy"], ["album", "Daydream"], ["genre", "Classical"], ["chord", "B6"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.0ms)
+  [1m[35m (3.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wa$$up"], ["band", "Prince"], ["album", "Flashdance: Original Soundtrack from the Motion Picture"], ["genre", "Stage And Screen"], ["chord", "Bbdom7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wanna One"], ["band", "Joy Division"], ["album", "Appetite for Destruction"], ["genre", "World"], ["chord", "Abmaj7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "QBS"], ["band", "The Who"], ["album", "Tracy Chapman"], ["genre", "Reggae"], ["chord", "C#6"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "She'z"], ["band", "PJ Harvey"], ["album", "Music Box"], ["genre", "Pop"], ["chord", "E#"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rainz"], ["band", "Elvis Presley"], ["album", "Happy Nation"], ["genre", "Country"], ["chord", "B#m"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A.C.E"], ["band", "Horace Silver"], ["album", "...Baby One More Time"], ["genre", "Hip Hop"], ["chord", "D#"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Infinite H"], ["band", "Roy Hargrove"], ["album", "High School Musical"], ["genre", "Hip Hop"], ["chord", "Ebdom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The Legend"], ["band", "The Cranberries"], ["album", "Can't Slow Down"], ["genre", "Jazz"], ["chord", "Adom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lip Service"], ["band", "Madonna"], ["album", "The Sign"], ["genre", "Jazz"], ["chord", "D7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.1ms)
+  [1m[35m (3.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pentagon"], ["band", "Tom Jones"], ["album", "Daydream"], ["genre", "Blues"], ["chord", "E#maj"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "4L"], ["band", "Alex Chilton"], ["album", "Born in the U.S.A."], ["genre", "Rap"], ["chord", "Cm7b5"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Good Day"], ["band", "The Birthday Party"], ["album", "Tracy Chapman"], ["genre", "Soul"], ["chord", "Dbdim7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bolbbalgan4"], ["band", "Velvet Revolver"], ["album", "Back in Black"], ["genre", "Soul"], ["chord", "Fmaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Triple H"], ["band", "Coldplay"], ["album", "X&Y"], ["genre", "Non Music"], ["chord", "C"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BTS"], ["band", "Cream"], ["album", "The Woman in Me"], ["genre", "Non Music"], ["chord", "D#dim"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.0ms)
+  [1m[35m (2.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "SF9"], ["band", "Thelonius Monk"], ["album", "Hybrid Theory"], ["genre", "Soul"], ["chord", "Abmaj7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "PLAYBACK"], ["band", "Cat Stevens"], ["album", "Breakfast in America"], ["genre", "Hip Hop"], ["chord", "Fb"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Orange Caramel"], ["band", "Kasabian"], ["album", "Dookie"], ["genre", "Country"], ["chord", "A#maj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Block B"], ["band", "The Yardbirds"], ["album", "Gold: Greatest Hits"], ["genre", "Classical"], ["chord", "C#"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gangkiz"], ["band", " The"], ["album", "Appetite for Destruction"], ["genre", "Rap"], ["chord", "Gmaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "APeace"], ["band", "Thornley"], ["album", "Back in Black"], ["genre", "Jazz"], ["chord", "E#dim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.0ms)
+  [1m[35m (3.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "G.I"], ["band", "Flaming Lips"], ["album", "Come On Over"], ["genre", "Latin"], ["chord", "D#"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chocolat"], ["band", "Dizzy Gillespie"], ["album", "Legend: The Best of Bob Marley & The Wailers"], ["genre", "Blues"], ["chord", "Ebdim"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Skarf"], ["band", "Iggy Pop"], ["album", "No Jacket Required"], ["genre", "Pop"], ["chord", "G#maj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (1.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Golden Child"], ["band", "Liam Gallagher"], ["album", "Confessions"], ["genre", "Folk"], ["chord", "C#maj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "NOM"], ["band", "The Cure"], ["album", "Flashdance: Original Soundtrack from the Motion Picture"], ["genre", "Latin"], ["chord", "Gbdim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Snuper"], ["band", "Oasis"], ["album", "Off the Wall"], ["genre", "Rap"], ["chord", "B-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.6ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Good Day"], ["band", "Grace Jones"], ["album", "Come Away with Me"], ["genre", "Blues"], ["chord", "D-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "IZ"], ["band", "Yumi Matsutoya"], ["album", "Grease: The Original Soundtrack from the Motion Picture"], ["genre", "Pop"], ["chord", "C#maj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "D.Holic"], ["band", "Marilyn Manson"], ["album", "The Immaculate Collection"], ["genre", "Non Music"], ["chord", "E#-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pristin"], ["band", "David Bowie"], ["album", "The Eminem Show"], ["genre", "Soul"], ["chord", "B#m7b5"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dal Shabet"], ["band", "Queen"], ["album", "21"], ["genre", "Country"], ["chord", "Cb6"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MASC"], ["band", "New Order"], ["album", "The Immaculate Collection"], ["genre", "Country"], ["chord", "Adom7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.0ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "2Yoon"], ["band", "Foo Fighters"], ["album", "21"], ["genre", "Non Music"], ["chord", "Bbmaj7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Snuper"], ["band", "The Undertones"], ["album", "Off the Wall"], ["genre", "Latin"], ["chord", "Fbm7b5"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "QBS"], ["band", "Pearl Jam"], ["album", "Jagged Little Pill"], ["genre", "Reggae"], ["chord", "E#maj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BtoB"], ["band", "Pearl Jam"], ["album", "The Dark Side of the Moon"], ["genre", "Funk"], ["chord", "Fdom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lovelyz"], ["band", "Sinead O'connor"], ["album", "Backstreet's Back"], ["genre", "Jazz"], ["chord", "F"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "I.B.I"], ["band", "Catherine Wheel"], ["album", "Let's Talk About Love"], ["genre", "Non Music"], ["chord", "Gbdom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (3.0ms)
+  [1m[35m (3.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Girl's Day"], ["band", "Keith Richards"], ["album", "Let's Talk About Love"], ["genre", "Stage And Screen"], ["chord", "Fmaj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "HALO"], ["band", "Hugh Masekela"], ["album", "Off the Wall"], ["genre", "Pop"], ["chord", "Cb"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "B.A.P"], ["band", "Carlos Santana"], ["album", "Slippery When Wet"], ["genre", "World"], ["chord", "F#m7"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brave Girls"], ["band", "Queen"], ["album", "Spice"], ["genre", "Stage And Screen"], ["chord", "F#dim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "APeace"], ["band", "Cootie Williams"], ["album", "The Woman in Me"], ["genre", "Stage And Screen"], ["chord", "A#-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "April"], ["band", "Ian Dury"], ["album", "Hybrid Theory"], ["genre", "Blues"], ["chord", "Fdom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.4ms)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Unnies"], ["band", "Captain Beefheart"], ["album", "Gold: Greatest Hits"], ["genre", "Country"], ["chord", "Bbdim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bigflo"], ["band", "K.D Lang"], ["album", "Legend: The Best of Bob Marley & The Wailers"], ["genre", "Latin"], ["chord", "F#m7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Trouble Maker"], ["band", "Nick Cave"], ["album", "Nevermind"], ["genre", "Reggae"], ["chord", "Dbdom7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "GFriend"], ["band", "Chris Isaak"], ["album", "Thriller"], ["genre", "Hip Hop"], ["chord", "F#-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "15&"], ["band", "Rick Wright"], ["album", "Confessions"], ["genre", "Funk"], ["chord", "Gb"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wings"], ["band", "Brian Wilson"], ["album", "Sgt. Pepper's Lonely Hearts Club Band"], ["genre", "Hip Hop"], ["chord", "Gb7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (1.8ms)
+  [1m[35m (12.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wa$$up"], ["band", "Foo Fighters"], ["album", "High School Musical"], ["genre", "Blues"], ["chord", "C-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "NOM"], ["band", "Catherine Wheel"], ["album", "21"], ["genre", "Folk"], ["chord", "Gmaj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BP Rania"], ["band", "Kate Bush"], ["album", "Jagged Little Pill"], ["genre", "Funk"], ["chord", "Fb-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering songs/song_html.html.erb
+  Rendered songs/song_html.html.erb (0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 09:47:07 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 14ms (Views: 1.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Play the Siren"], ["band", "Chuck Berry"], ["album", "Their Greatest Hits (1971–1975)"], ["genre", "World"], ["chord", "Amaj"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BP Rania"], ["band", "Sex Pistols"], ["album", "Dookie"], ["genre", "Latin"], ["chord", "Bb-7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "GD&TOP"], ["band", "The Cramps"], ["album", "Supernatural"], ["genre", "World"], ["chord", "Adim7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "GOT7"], ["band", "Pat Metheny"], ["album", "Can't Slow Down"], ["genre", "Pop"], ["chord", "B#maj7"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "EXO"], ["band", "Ella Fitzgerald"], ["album", "Recovery"], ["genre", "Classical"], ["chord", "Cmaj"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSong Create (0.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "band", "album", "genre", "chord") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MVP"], ["band", "Afrika Bambaataa"], ["album", "Thriller"], ["genre", "Hip Hop"], ["chord", "Gdim"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:07:17 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 278ms (Views: 262.8ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:07:44 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 213ms (Views: 196.5ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:08:16 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 229ms (Views: 216.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:08:40 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 255ms (Views: 238.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:11:22 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 240ms (Views: 224.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:11:22 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:11:31 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 211ms (Views: 197.9ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:11:31 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:12:12 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 239ms (Views: 223.5ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:12:12 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:12:21 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 217ms (Views: 203.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:12:21 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:16:36 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 21ms (Views: 10.6ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:16:41 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 237ms (Views: 224.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:16:41 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:16:41 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:17:37 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 221ms (Views: 207.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:17:37 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:17:37 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:17:47 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 212ms (Views: 199.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:17:47 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:17:47 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:18:11 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 235ms (Views: 215.9ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:18:11 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:18:11 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:18:22 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 211ms (Views: 198.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:18:22 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:18:22 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:18:36 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 221ms (Views: 207.5ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:18:37 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:18:37 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:18:52 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 217ms (Views: 201.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:18:53 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:18:53 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:19:24 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 222ms (Views: 207.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:19:24 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:19:24 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:20:07 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 221ms (Views: 204.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:20:07 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:20:07 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:20:18 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 232ms (Views: 207.8ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:20:18 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:20:18 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:21:08 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 11.3ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:21:26 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 19ms (Views: 8.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:21:36 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 25ms (Views: 11.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:34:52 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 11.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:35:42 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 247ms (Views: 225.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:35:59 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 232ms (Views: 215.3ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:36:07 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 229ms (Views: 212.8ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:36:39 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 222ms (Views: 207.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:36:48 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 222ms (Views: 209.2ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:37:01 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 252ms (Views: 230.9ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:37:15 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 226ms (Views: 213.0ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:37:24 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 231ms (Views: 214.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/html" for 127.0.0.1 at 2018-06-25 10:37:30 +0700
+Processing by SongsController#song_html as HTML
+  Rendering songs/song_html.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered songs/song_html.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 222ms (Views: 209.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:39:20 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 25ms (Views: 9.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/" for 127.0.0.1 at 2018-06-25 10:39:27 +0700
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:39:36 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 26ms (Views: 14.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:40:26 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 20ms (Views: 8.7ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:41:23 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 10.0ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:41:29 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 22ms (Views: 9.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:48:12 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 21ms (Views: 8.6ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:48:31 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 27ms (Views: 15.7ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:48:38 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 10.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:49:01 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 9.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:49:27 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 26ms (Views: 12.8ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:51:26 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 19ms (Views: 9.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:51:37 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 9.8ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:51:45 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 9.8ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:51:59 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 22ms (Views: 8.9ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:54:06 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 22ms (Views: 8.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 10:54:16 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 10.3ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:02:35 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 21ms (Views: 8.8ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:02:46 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 24ms (Views: 12.8ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:02:54 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 22ms (Views: 10.8ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:10:16 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 21ms (Views: 9.0ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:28:21 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 20ms (Views: 9.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:28:40 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 9.8ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:28:50 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 20ms (Views: 8.6ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:29:10 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 25ms (Views: 13.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:29:27 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 32ms (Views: 13.7ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:29:46 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 22ms (Views: 8.8ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:30:14 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 24ms (Views: 13.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:30:33 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:30:52 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 22ms (Views: 9.0ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:30:59 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 28ms (Views: 9.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:31:06 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 22ms (Views: 9.0ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:31:19 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 25ms (Views: 9.9ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:31:24 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 23ms (Views: 11.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/song/json" for 127.0.0.1 at 2018-06-25 11:31:57 +0700
+Processing by SongsController#song_json as HTML
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 200 OK in 22ms (Views: 8.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
